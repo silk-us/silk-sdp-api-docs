@@ -1,25 +1,43 @@
-# endpoint
+# stats/system
 
 ### Location
-https://{***host-address***}/api/v2/endpoint
+https://{***host-address***}/api/v2/stats/system
 
 ### Supported methods
 GET
 
 ### Property types:
  ```text
- "id" : int
- "labels" : string
+"iops_avg" : int
+"iops_max" : int
+"latency_inner" : int
+"latency_outer" : int
+"resolution" : int
+"throughput_avg" : int
+"throughput_max" : int
+"timestamp" : int
  ```
 
 ## GET
 
 Example 1:
 
-GET https://{***host-address***}/api/v2/endpoint
+GET https://{***host-address***}/api/v2/stats/system
 ```json
 {
-
+  "hits": [
+    {
+      "iops_avg": 0,
+      "iops_max": 0,
+      "latency_inner": 0.0,
+      "latency_outer": 0.0,
+      "resolution": 5,
+      "throughput_avg": 0,
+      "throughput_max": 0,
+      "timestamp": 1635196465
+    }
+  ],
+  "total": 1
 }
 ```
 ---
