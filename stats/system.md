@@ -9,8 +9,8 @@ GET
 ## Stats-specific modifiers
 | Supported Modifiers	| Description | Supported values | Default value |
 |-----------------------|------------|----------------|--------------|
-|__rw_breakdown	|Provides read/write statistics. |`True` boolean value| `False` |
-|__bs_breakdown	|Provides blocksize statistics.| `True` boolean value| `False` |
+|__rw_breakdown	|Provides read/write statistics. |`True`, `False` | `False` |
+|__bs_breakdown	|Provides blocksize statistics.| `True`, `False` | `False` |
 |__from_time	|Display performance statistics for the specified timestamp in UTC.| Timestamp as a Unix/Epoch time integer | `now` |
 |__datapoints	|Show previous performance statistics for number of points specified.| `int` integer less than 1000 | `1` |
 |__resolution |Defined time between each iterative performmance statistic. | `5s`, `5m`, `1h`| `5s` |
