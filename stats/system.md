@@ -6,6 +6,13 @@ https://{***host-address***}/api/v2/stats/system
 ### Supported methods
 GET
 
+## Stats-specific modifiers
+| Supported Modifiers	| Description | Supported values |
+|-----------------------|------------|----------------|
+|__rw_breakdown	|Provides read/write statistics. |`True`|
+|__bs_breakdown	|Provides blocksize statistics.| `True` |
+
+
 ### Property types:
  ```text
 "iops_avg" : int
@@ -13,6 +20,7 @@ GET
 "latency_inner" : int
 "latency_outer" : int
 "resolution" : int
+"rw" : string
 "throughput_avg" : int
 "throughput_max" : int
 "timestamp" : int
@@ -40,6 +48,84 @@ GET https://{***host-address***}/api/v2/stats/system
   "total": 1
 }
 ```
+
+Example 2:
+
+GET https://{***host-address***}/api/v2/stats/system?__bs_breakdown=True
+```json
+{
+  "hits": [
+    {
+      "bs": "lt8k",
+      "iops_avg": 0,
+      "latency_inner": 0.0,
+      "latency_outer": 0.0,
+      "resolution": 5,
+      "throughput_avg": 0,
+      "timestamp": 1639503010
+    },
+    {
+      "bs": "8k_64k",
+      "iops_avg": 81086,
+      "latency_inner": 0.44,
+      "latency_outer": 0.03,
+      "resolution": 5,
+      "throughput_avg": 1328506470,
+      "timestamp": 1639503010
+    },
+    {
+      "bs": "64k_256k",
+      "iops_avg": 0,
+      "latency_inner": 0.0,
+      "latency_outer": 0.0,
+      "resolution": 5,
+      "throughput_avg": 0,
+      "timestamp": 1639503010
+    },
+    {
+      "bs": "gt256k",
+      "iops_avg": 0,
+      "latency_inner": 0.0,
+      "latency_outer": 0.0,
+      "resolution": 5,
+      "throughput_avg": 0,
+      "timestamp": 1639503010
+    }
+  ],
+  "total": 4
+}
+
+```
+
+Example 3:
+
+GET https://{***host-address***}/api/v2/stats/system?__bs_breakdown=True
+```json
+{
+  "hits": [
+    {
+      "iops_avg": 72650,
+      "latency_inner": 0.46,
+      "latency_outer": 0.02,
+      "resolution": 5,
+      "rw": "r",
+      "throughput_avg": 1190300877,
+      "timestamp": 1639503085
+    },
+    {
+      "iops_avg": 8079,
+      "latency_inner": 0.23,
+      "latency_outer": 0.12,
+      "resolution": 5,
+      "rw": "w",
+      "throughput_avg": 132366336,
+      "timestamp": 1639503085
+    }
+  ],
+  "total": 2
+}
+```
+
 ---
 
 ## Global modifiers

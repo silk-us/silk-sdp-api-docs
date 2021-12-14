@@ -6,6 +6,12 @@ https://{***host-address***}/api/v2/stats/volumes
 ### Supported methods
 GET
 
+## Stats-specific modifiers
+| Supported Modifiers	| Description | Supported values |
+|-----------------------|------------|----------------|
+|__rw_breakdown	|Provides read/write statistics.|`True`|
+|__bs_breakdown	|Provides blocksize statistics.|`True`|
+
 ### Property types:
  ```text
 "iops_avg" : int
@@ -14,6 +20,7 @@ GET
 "latency_outer" : int
 "peer_k2_name" : string
 "resolution" : int
+"rw" : string
 "throughput_avg" : int
 "throughput_max" : int
 "timestamp" : int
@@ -25,29 +32,148 @@ GET
 
 ## GET
 
-Example 1:
-
-GET https://{***host-address***}/api/v2/stats/volumes
+Example 1:  
+* This example gathers global volume stats.
+```
+GET https://{host-address}/api/v2/stats/volumes
+```
 ```json
 {
   "hits": [
     {
-      "iops_avg": 0,
-      "iops_max": 0,
-      "latency_inner": 0.0,
-      "latency_outer": 0.0,
-      "peer_k2_name": null,
+      "iops_avg": 20370,
+      "iops_max": 20483,
+      "latency_inner": 0.43,
+      "latency_outer": 0.03,
+      "peer_k2_name": "K2-6310",
       "resolution": 5,
-      "throughput_avg": 0,
-      "throughput_max": 0,
-      "timestamp": 1635196300,
-      "volume": "@{ref=/volumes/259}",
-      "volume_name": "Volume1"
+      "throughput_avg": 333742080,
+      "throughput_max": 335593472,
+      "timestamp": 1639503680,
+      "volume": {
+        "ref": "/volumes/5"
+      },
+      "volume_name": "centos-vol1"
     }
   ],
   "total": 1
 }
+
 ```
+
+Example 2:
+* This example gathers global volume stats with read and write stats seperated.
+```
+GET https://{host-address}/api/v2/stats/volumes?__rw_breakdown=True
+```
+```json
+{
+  "hits": [
+    {
+      "iops_avg": 18024,
+      "latency_inner": 0.46,
+      "latency_outer": 0.02,
+      "peer_k2_name": "K2-6310",
+      "resolution": 5,
+      "rw": "r",
+      "throughput_avg": 295311770,
+      "timestamp": 1639503525,
+      "volume": {
+        "ref": "/volumes/5"
+      },
+      "volume_name": "centos-vol1"
+    },
+    {
+      "iops_avg": 2016,
+      "latency_inner": 0.22,
+      "latency_outer": 0.11,
+      "peer_k2_name": "K2-6310",
+      "resolution": 5,
+      "rw": "w",
+      "throughput_avg": 33030144,
+      "timestamp": 1639503525,
+      "volume": {
+        "ref": "/volumes/5"
+      },
+      "volume_name": "centos-vol1"
+    }
+  ],
+  "total": 2
+}
+
+```
+
+Example 3:
+* This example gathers a specific volume's stats with block size stats seperated.
+```
+GET https://{host-address}/api/v2/stats/volumes/5?__bs_breakdown=True
+```
+```json
+{
+  "hits": [
+    {
+      "bs": "lt8k",
+      "iops_avg": 0,
+      "latency_inner": 0.0,
+      "latency_outer": 0.0,
+      "peer_k2_name": "K2-6310",
+      "resolution": 5,
+      "throughput_avg": 0,
+      "timestamp": 1639503605,
+      "volume": {
+        "ref": "/volumes/5"
+      },
+      "volume_name": "centos-vol1"
+    },
+    {
+      "bs": "8k_64k",
+      "iops_avg": 20190,
+      "latency_inner": 0.44,
+      "latency_outer": 0.03,
+      "peer_k2_name": "K2-6310",
+      "resolution": 5,
+      "throughput_avg": 330792960,
+      "timestamp": 1639503605,
+      "volume": {
+        "ref": "/volumes/5"
+      },
+      "volume_name": "centos-vol1"
+    },
+    {
+      "bs": "64k_256k",
+      "iops_avg": 0,
+      "latency_inner": 0.0,
+      "latency_outer": 0.0,
+      "peer_k2_name": "K2-6310",
+      "resolution": 5,
+      "throughput_avg": 0,
+      "timestamp": 1639503605,
+      "volume": {
+        "ref": "/volumes/5"
+      },
+      "volume_name": "centos-vol1"
+    },
+    {
+      "bs": "gt256k",
+      "iops_avg": 0,
+      "latency_inner": 0.0,
+      "latency_outer": 0.0,
+      "peer_k2_name": "K2-6310",
+      "resolution": 5,
+      "throughput_avg": 0,
+      "timestamp": 1639503605,
+      "volume": {
+        "ref": "/volumes/5"
+      },
+      "volume_name": "centos-vol1"
+    }
+  ],
+  "total": 4
+}
+
+```
+
+
 ---
 
 ## Global modifiers
