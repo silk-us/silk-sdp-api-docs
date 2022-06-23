@@ -45,8 +45,7 @@ GET https://{***host-address***}/api/v2/system/state
       "iscsi_qualified_target_name": "iqn.2009-01.com.kaminario:storage.k2.54645",
       "last_online_time": 1551766366.8819399,
       "next_state": "None",
-      "replication_default_tar
-      get_exposure": "unmapped",
+      "replication_default_target_exposure": "unmapped",
       "replication_min_protocol_version": 1,
       "replication_protocol_version": 2,
       "rest_api_version": "2.2.0",
