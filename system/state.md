@@ -73,8 +73,7 @@ GET https://{***host-address***}/api/v2/system/state
 system_name
 send_callhome
 send_test_event
-replication_default_tar
-get_exposure
+replication_default_target_exposure
  ```
 
 Example 1:
