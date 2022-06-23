@@ -42,8 +42,7 @@ GET https://{***host-address***}/api/v2/system/state
       "current_user_role": "admin",
       "id": 1,
       "is_system_functionality_degraded": false,
-      "iscsi_qualified_tar
-      get_name": "iqn.2009-01.com.kaminario:storage.k2.54645",
+      "iscsi_qualified_target_name": "iqn.2009-01.com.kaminario:storage.k2.54645",
       "last_online_time": 1551766366.8819399,
       "next_state": "None",
       "replication_default_tar
