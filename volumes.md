@@ -65,8 +65,7 @@ GET https://{***host-address***}/api/v2/volumes
         "ref": "/stats/volumes/11"
       },
       "dedup_source": 493920628,
-      "dedup_tar
-      get": 118264364,
+      "dedup_target": 118264364,
       "description": "Synced by d572 source machine",
       "id": 11,
       "is_dedup": true,
