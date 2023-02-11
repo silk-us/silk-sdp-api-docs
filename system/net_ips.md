@@ -29,18 +29,59 @@ GET https://{***host-address***}/api/v2/system/net_ips
 {
   "hits": [
     {
-      "id": 3,
-      "ip_address": "10.10.50.203",
+      "id": 4,
+      "ip_address": "10.112.1.149",
       "net_port": {
-        "ref": "/system/net_ports/10"
+        "ref": "/system/net_ports/13"
       },
       "net_portchannel": null,
       "net_vlan": null,
-      "network_mask": "255.255.0.0",
+      "network_mask": "255.255.255.240",
+      "nvme_port": null,
+      "wan_port": {
+        "ref": "/system/wan_ports/3"
+      }
+    },
+    {
+      "id": 3,
+      "ip_address": "10.112.1.133",
+      "net_port": {
+        "ref": "/system/net_ports/12"
+      },
+      "net_portchannel": null,
+      "net_vlan": null,
+      "network_mask": "255.255.255.240",
+      "nvme_port": null,
+      "wan_port": null
+    },
+    {
+      "id": 2,
+      "ip_address": "10.112.1.148",
+      "net_port": {
+        "ref": "/system/net_ports/7"
+      },
+      "net_portchannel": null,
+      "net_vlan": null,
+      "network_mask": "255.255.255.240",
+      "nvme_port": null,
+      "wan_port": {
+        "ref": "/system/wan_ports/1"
+      }
+    },
+    {
+      "id": 1,
+      "ip_address": "10.112.1.132",
+      "net_port": {
+        "ref": "/system/net_ports/6"
+      },
+      "net_portchannel": null,
+      "net_vlan": null,
+      "network_mask": "255.255.255.240",
+      "nvme_port": null,
       "wan_port": null
     }
-],
-  "limit": 100,
+  ],
+  "limit": 1000,
   "offset": 0,
   "total": 4
 }

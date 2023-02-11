@@ -39,54 +39,220 @@ GET https://{***host-address***}/api/v2/system/net_ports
 ```json
 {
   "hits": [
-{
-      "auto_negotiation": null,
+    {
       "contained_in": {
-        "ref": "/system/servers/20"
+        "ref": "/system/servers/3"
       },
       "flow_control": null,
-      "id": 30,
+      "id": 4,
       "is_fru": false,
       "link_state": {
-        "ref": "/system/hardware_states/165"
+        "ref": "/system/hardware_states/9"
       },
-      "mac_addr": "00:25:90:fc:07:1d",
+      "mac_addr": "00:0d:3a:3f:6d:ad",
       "mtu": null,
-      "name": "kblock01-knode02-mgmtport02",
-      "port_type": "mgmtport",
+      "name": "c-node04_ib01",
+      "port_type": "ib",
       "server": {
-        "ref": "/system/servers/20"
+        "ref": "/system/servers/3"
       },
       "speed_state": {
-        "ref": "/system/hardware_states/163"
+        "ref": "/system/hardware_states/7"
       }
     },
     {
-      "auto_negotiation": null,
       "contained_in": {
-        "ref": "/system/servers/20"
+        "ref": "/system/servers/3"
       },
       "flow_control": null,
-      "id": 31,
+      "id": 5,
       "is_fru": false,
       "link_state": {
-        "ref": "/system/hardware_states/172"
+        "ref": "/system/hardware_states/17"
       },
-      "mac_addr": "54c101",
+      "mac_addr": "60:45:bd:2d:4a:fe",
       "mtu": null,
-      "name": "kblock01-knode02-ib01",
+      "name": "c-node04_ib02",
       "port_type": "ib",
       "server": {
-        "ref": "/system/servers/20"
+        "ref": "/system/servers/3"
       },
       "speed_state": {
-        "ref": "/system/hardware_states/170"
+        "ref": "/system/hardware_states/15"
+      }
+    },
+    {
+      "contained_in": {
+        "ref": "/system/servers/3"
+      },
+      "flow_control": null,
+      "id": 6,
+      "is_fru": false,
+      "link_state": {
+        "ref": "/system/hardware_states/25"
+      },
+      "mac_addr": "60:45:bd:2d:46:44",
+      "mtu": "1500",
+      "name": "c-node04_dataport01",
+      "port_type": "dataport",
+      "server": {
+        "ref": "/system/servers/3"
+      },
+      "speed_state": {
+        "ref": "/system/hardware_states/23"
+      }
+    },
+    {
+      "contained_in": {
+        "ref": "/system/servers/3"
+      },
+      "flow_control": null,
+      "id": 7,
+      "is_fru": false,
+      "link_state": {
+        "ref": "/system/hardware_states/33"
+      },
+      "mac_addr": "60:45:bd:2d:4a:46",
+      "mtu": "1500",
+      "name": "c-node04_dataport02",
+      "port_type": "dataport",
+      "server": {
+        "ref": "/system/servers/3"
+      },
+      "speed_state": {
+        "ref": "/system/hardware_states/31"
+      }
+    },
+    {
+      "contained_in": {
+        "ref": "/system/servers/3"
+      },
+      "flow_control": null,
+      "id": 8,
+      "is_fru": false,
+      "link_state": {
+        "ref": "/system/hardware_states/41"
+      },
+      "mac_addr": "60:45:bd:2d:49:e9",
+      "mtu": null,
+      "name": "c-node04_mgmtport01",
+      "port_type": "mgmtport",
+      "server": {
+        "ref": "/system/servers/3"
+      },
+      "speed_state": {
+        "ref": "/system/hardware_states/39"
+      }
+    },
+    {
+      "contained_in": {
+        "ref": "/system/servers/9"
+      },
+      "flow_control": null,
+      "id": 10,
+      "is_fru": false,
+      "link_state": {
+        "ref": "/system/hardware_states/54"
+      },
+      "mac_addr": "00:22:48:48:8e:f8",
+      "mtu": null,
+      "name": "c-node05_ib01",
+      "port_type": "ib",
+      "server": {
+        "ref": "/system/servers/9"
+      },
+      "speed_state": {
+        "ref": "/system/hardware_states/52"
+      }
+    },
+    {
+      "contained_in": {
+        "ref": "/system/servers/9"
+      },
+      "flow_control": null,
+      "id": 11,
+      "is_fru": false,
+      "link_state": {
+        "ref": "/system/hardware_states/62"
+      },
+      "mac_addr": "00:22:48:48:85:27",
+      "mtu": null,
+      "name": "c-node05_ib02",
+      "port_type": "ib",
+      "server": {
+        "ref": "/system/servers/9"
+      },
+      "speed_state": {
+        "ref": "/system/hardware_states/60"
+      }
+    },
+    {
+      "contained_in": {
+        "ref": "/system/servers/9"
+      },
+      "flow_control": null,
+      "id": 12,
+      "is_fru": false,
+      "link_state": {
+        "ref": "/system/hardware_states/70"
+      },
+      "mac_addr": "00:22:48:48:81:22",
+      "mtu": "1500",
+      "name": "c-node05_dataport01",
+      "port_type": "dataport",
+      "server": {
+        "ref": "/system/servers/9"
+      },
+      "speed_state": {
+        "ref": "/system/hardware_states/68"
+      }
+    },
+    {
+      "contained_in": {
+        "ref": "/system/servers/9"
+      },
+      "flow_control": null,
+      "id": 13,
+      "is_fru": false,
+      "link_state": {
+        "ref": "/system/hardware_states/78"
+      },
+      "mac_addr": "00:22:48:48:84:61",
+      "mtu": "1500",
+      "name": "c-node05_dataport02",
+      "port_type": "dataport",
+      "server": {
+        "ref": "/system/servers/9"
+      },
+      "speed_state": {
+        "ref": "/system/hardware_states/76"
+      }
+    },
+    {
+      "contained_in": {
+        "ref": "/system/servers/9"
+      },
+      "flow_control": null,
+      "id": 14,
+      "is_fru": false,
+      "link_state": {
+        "ref": "/system/hardware_states/86"
+      },
+      "mac_addr": "00:22:48:48:8d:db",
+      "mtu": null,
+      "name": "c-node05_mgmtport01",
+      "port_type": "mgmtport",
+      "server": {
+        "ref": "/system/servers/9"
+      },
+      "speed_state": {
+        "ref": "/system/hardware_states/84"
       }
     }
-],
-  "limit": 100,
+  ],
+  "limit": 1000,
   "offset": 0,
-  "total": 2
+  "total": 10
 }
 ```
 
