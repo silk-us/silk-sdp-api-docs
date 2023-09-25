@@ -82,9 +82,7 @@ GET https://{***host-address***}/api/v2/volumes
      "vmware_support": false,
      "volume_group": {
        "ref": "/volume_groups/4"
-     },
-     "pipeId": 8,
-     "pipeName": "test-vm-vol-4"
+     }
    }
   ],
   "limit": 100,
