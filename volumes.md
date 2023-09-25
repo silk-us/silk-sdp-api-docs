@@ -54,44 +54,38 @@ GET https://{***host-address***}/api/v2/volumes
 ```json
 {
   "hits": [
-{
-      "avg_compressed_ratio": 4.4425162689804774,
-      "avg_compressed_ratio_timestamp": 195686525591187.0,
-      "creation_time": 1551766917,
-      "current_replication_stats": {
-        "ref": "/replication/stats/volumes/11"
-      },
-      "current_stats": {
-        "ref": "/stats/volumes/11"
-      },
-      "dedup_source": 493920628,
-      "dedup_target": 118264364,
-      "description": "Synced by d572 source machine",
-      "id": 11,
-      "is_dedup": true,
-      "is_new": false,
-      "iscsi_tgt_converted_name": "kcs572.rep.atf-vg-1.vol.3",
-      "last_restored_from": null,
-      "last_restored_time": null,
-      "logical_capacity": 314352016,
-      "marked_for_deletion": false,
-      "name": "kcs572_Rep_ATF-VG-1_VOL_3",
-      "no_dedup": 31456,
-      "node_id": 7,
-      "read_only": false,
-      "replication_peer_volume": {
-        "ref": "/replication/peer_volumes/6"
-      },
-      "scsi_sn": "d5750006",
-      "scsi_suffix": 6,
-      "size": 314572800,
-      "snapshots_logical_capacity": 204157292,
-      "stream_avg_compressed_size_in_bytes": 750.0,
-      "vmware_support": false,
-      "volume_group": {
-        "ref": "/volume_groups/8"
-      }
-    }
+   {
+     "avg_compressed_ratio": null,
+     "avg_compressed_ratio_timestamp": 0.0,
+     "creation_time": 1695658216,
+     "current_replication_stats": null,
+     "current_stats": {
+       "ref": "/stats/volumes/8"
+     },
+     "description": null,
+     "id": 8,
+     "is_dedup": false,
+     "is_new": false,
+     "iscsi_tgt_converted_name": "test-vm-vol-4",
+     "last_restored_from": null,
+     "last_restored_time": null,
+     "logical_capacity": 0.0,
+     "marked_for_deletion": false,
+     "name": "test-vm-vol-4",
+     "node_id": 5,
+     "read_only": false,
+     "scsi_sn": "1072470004",
+     "scsi_suffix": 4,
+     "size": 209715200,
+     "snapshots_logical_capacity": 0,
+     "stream_avg_compressed_size_in_bytes": 0.0,
+     "vmware_support": false,
+     "volume_group": {
+       "ref": "/volume_groups/4"
+     },
+     "pipeId": 8,
+     "pipeName": "test-vm-vol-4"
+   }
   ],
   "limit": 100,
   "offset": 0,
